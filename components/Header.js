@@ -14,7 +14,7 @@ export default function Header() {
           </Link>
         </NavBlocks>
         <NavBlocks>
-          <Link href="/">
+          <Link href="/projects">
             <a>Portfolio</a>
           </Link>
           <Link href="/about">
