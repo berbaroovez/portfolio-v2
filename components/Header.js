@@ -38,7 +38,8 @@ const HeaderDiv = styled.div`
   h1 {
     color: hsl(0, 0%, 30%);
   }
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   margin: 0 auto;
   margin-bottom: 50px;
 `;
