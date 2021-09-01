@@ -1,6 +1,16 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+html{
+--main-grey-color: hsl(0, 0%, 90%);
+--main-grey-font-color: hsl(0, 0%, 50%);
+--main-grey-font-hover-color: hsl(0, 0%, 20%);
+
+
+
+}
+
+
 /* Box sizing rules */
 *,
 *::before,
@@ -76,6 +86,7 @@ select {
   }
 }
 
+html { font-family: "Inter", "system-ui"; }
 `;
 
 export default GlobalStyles;
