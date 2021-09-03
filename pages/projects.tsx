@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import PageTitles from "./../components/PageTitles";
-
+import Link from "next/link";
 export default function Projects() {
   return (
     <ProjectDiv>
-      <PageTitles title="Projects" subtitle="some things I've made" />
+      <PageTitles title="Projects" subtitle="yes there is spelling mistakes" />
       <ProjectBox>
         <ProjectTitle>Task Manager</ProjectTitle>
         <p>
@@ -49,6 +49,71 @@ export default function Projects() {
           that could sign up.
         </p>
       </ProjectBox>
+      <ProjectBox>
+        <ProjectTitle>Form Summary</ProjectTitle>
+        <p>
+          <Link href="https://www.formsummary.com/"> Form Summary </Link>, this
+          was a simple website made for my mother who does custom sugar cookies.
+          A few times a year she does cookie drops and needed a better way to
+          fulfil orders. Created a simple website that allow her to upload her
+          spreadsheet and see the info in seperate cards. First time storing
+          data in local storage allowing for the website to be closed and
+          reopened to the same info.
+        </p>
+      </ProjectBox>
+      <ProjectBox>
+        <ProjectTitle>Cacti</ProjectTitle>
+        <p>
+          <Link href="https://drinkcacti.vercel.app/"> Cacti </Link>, This was
+          just a remake of the website used to launch the seltzier brand cacti.
+          I was practing styling and this website seemed unique and simple
+          enough to copy.
+        </p>
+      </ProjectBox>
+      <ProjectBox>
+        <ProjectTitle>Cookie Crumbs</ProjectTitle>
+        <p>
+          <Link href="cookiecrumbs.vercel.app"> Cookie Crumbs </Link> . Oh boy
+          this project taught me alot and i failed a ton. it was an attempt to
+          create an one stop shop for my moms cookie buisness. ordering forms, a
+          backend to accept/deny orders, an order tracker to see what stage a
+          order was in, and even a payment system to accept payments.
+        </p>
+        <p>
+          This was my first major project that had a real world goal in mind. I
+          learned a lot about when to use server side rendering vs client side
+          rendering with NextJS. The diffuclty of creating a order form that
+          worked for multiple people. I even attempted at creating a form maker
+          which i failed at.
+        </p>
+        <p>
+          overall, im proud of this project. I had lots of ambitions and learned
+          my limits of my programming knowledge. in the end it failed and i
+          never launched it but i learned database design, getting feedback from
+          a client, and much more.
+        </p>
+      </ProjectBox>
+      <ProjectBox>
+        <ProjectTitle>Broke bois PS5</ProjectTitle>
+        <p>
+          The PS5 launched and i needed some styling/state practice so i remade
+          the home screen ui in react.{" "}
+          <Link href="https://ps-5-ui.vercel.app/">PSFive</Link>
+        </p>
+      </ProjectBox>
+      <ProjectBox>
+        <ProjectTitle>Twitch Emote Finder</ProjectTitle>
+        <p>
+          Twitch streamers have their own emotes but there is two third party
+          extensions that add even more custom emotes to chat. For my first ever
+          react project i copied one of my favorite sites{" "}
+          <Link href="https://slmn.io/emote">here</Link>. Used it as api
+          practice. simple. perfect first project.{" "}
+          <Link href="https://twitch-emote-finder.vercel.app/">
+            Emote Finder
+          </Link>
+        </p>
+      </ProjectBox>
     </ProjectDiv>
   );
 }
@@ -65,5 +130,16 @@ const ProjectBox = styled.div`
     padding: 10px 0;
     text-transform: lowercase;
   }
+
+  a {
+    color: #503cff;
+    text-decoration: none;
+    font-weight: 600;
+
+    :hover {
+      text-decoration: underline;
+    }
+  }
+  margin-bottom: 20px;
 `;
 const ProjectTitle = styled.h3``;

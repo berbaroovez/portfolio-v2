@@ -23,6 +23,10 @@ export default function Home() {
 }
 
 const IndexDiv = styled.div`
+  svg {
+    height: 40px;
+    width: 40px;
+  }
   width: 90%;
   word-wrap: break-word;
   max-width: 500px;
@@ -43,7 +47,7 @@ const IndexDiv = styled.div`
     margin-bottom: 25px;
   }
   .aboutme {
-    font-weight: 200;
+    font-weight: 300;
     line-height: 2;
   }
 `;

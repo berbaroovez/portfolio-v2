@@ -1,42 +1,18 @@
 const quotes = [
   {
-    author: "Scott",
+    author: "LL",
     quote:
-      "I'm not a great programmer; I'm just a good programmer with great habits.",
+      "You'd think that everthingon this t-shirt would be speld correctley because it printed on a t shirt but not everything thats supossed to be done right is actualley done right & thats the beauty of it",
   },
   {
-    author: "Kent Beck",
+    author: "LL",
+    quote: "Think Deep, Dont Sink",
+  },
+
+  {
+    author: "Ward Cunningham",
     quote:
-      "Programming today is a cool thing; not everyone needs to know about it.",
-  },
-  {
-    author: "Ben Smith",
-    //A quote from the book "The Art of Programming"
-    quote: "The best way to predict the future is to create it.",
-  },
-  {
-    //A random English name
-    author: "John Doe",
-    //A random quote from harry potter
-    quote: "I solemnly swear that I am up to no good.",
-  },
-  {
-    //An la liga player name
-    author: "Juan Carlos",
-    //A random quote from the movie "The Godfather"
-    quote: "I'm the king of the world!",
-  },
-  {
-    //A american soccer players name
-    author: "Lionel Messi",
-    //A quote from the champions league
-    quote: "I'm the best player in the world!",
-  },
-  {
-    //The worlds biggest youtuber
-    author: "T-Series",
-    //A random quote from bill gates
-    quote: "I'm rich!",
+      "The best way to get the right answer on the Internet is not to ask a question. It’s to post the wrong answer",
   },
 ];
 

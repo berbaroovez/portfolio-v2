@@ -9,7 +9,7 @@ export default function Header() {
           <Link href="/">
             <a>Home</a>
           </Link>
-          <Link href="/about">
+          <Link href="/quotes">
             <a>Quotes</a>
           </Link>
         </NavBlocks>
@@ -17,15 +17,15 @@ export default function Header() {
           <Link href="/projects">
             <a>Portfolio</a>
           </Link>
-          <Link href="/about">
+          <Link href="/goals">
             <a>Goals</a>
           </Link>
         </NavBlocks>
         <NavBlocks>
-          <Link href="/">
+          <Link href="/blog">
             <a>Blog</a>
           </Link>
-          <Link href="/about">
+          <Link href="/contact">
             <a>Contact</a>
           </Link>
         </NavBlocks>

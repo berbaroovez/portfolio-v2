@@ -5,7 +5,7 @@ html{
 --main-grey-color: hsl(0, 0%, 90%);
 --main-grey-font-color: hsl(0, 0%, 50%);
 --main-grey-font-hover-color: hsl(0, 0%, 20%);
-
+/* background: #e9f2ff; */
 
 
 }
