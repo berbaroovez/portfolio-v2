@@ -1,9 +1,19 @@
+import { NextSeo } from "next-seo";
+import React from "react";
 import styled from "styled-components";
 import PageTitles from "../components/PageTitles";
 
 export default function Goals() {
   return (
     <GoalsDiv>
+      <NextSeo
+        title="goals – Carter Olson"
+        canonical="https://cartols/goals"
+        openGraph={{
+          url: "https://cartols/goals",
+          title: "goals – Carter Olson",
+        }}
+      />
       <PageTitles
         title="Goals 🥅"
         subtitle="They play soccer in my backyard, I think I see Messi"

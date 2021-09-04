@@ -1,10 +1,19 @@
 import styled from "styled-components";
 import PageTitles from "../components/PageTitles";
-import { FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
+import { NextSeo } from "next-seo";
 
 export default function Contact() {
   return (
     <ContactDiv>
+      <NextSeo
+        title="contact – Carter Olson"
+        canonical="https://cartols/contact"
+        openGraph={{
+          url: "https://cartols/contact",
+          title: "contact – Carter Olson",
+        }}
+      />
       <PageTitles title="Contact Tings" subtitle="sup" />
       <ContactInfo>
         <p>Email</p>

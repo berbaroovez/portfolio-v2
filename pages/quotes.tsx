@@ -1,9 +1,19 @@
 import styled from "styled-components";
 import PageTitles from "../components/PageTitles";
 import { quotes } from "../util/quotes";
+import { NextSeo } from "next-seo";
+
 export default function Quotes() {
   return (
     <QuotesDiv>
+      <NextSeo
+        title="quotes – Carter Olson"
+        canonical="https://cartols/quotes"
+        openGraph={{
+          url: "https://cartols/quotes",
+          title: "quotes – Carter Olson",
+        }}
+      />
       <PageTitles title="Quotes" subtitle="some of my favorite quotes" />
 
       {quotes.map((quote, index) => (
