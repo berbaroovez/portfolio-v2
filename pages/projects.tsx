@@ -59,6 +59,34 @@ export default function Projects() {
         </p>
       </ProjectBox>
       <ProjectBox>
+        <ProjectTitle>Cat Ears for V1</ProjectTitle>
+        <p>
+          V1 stands for version 1 an north american esports team. In the summer
+          of 2021 their valorant team advanced to the first ever LAN for the
+          game valorant. As one of underdog teams they came in and won their
+          first game with their star player wearing cat ears on his headset.
+          Thinking quickly i launced a website where people can upload photos
+          and add cat eats to it then download it. I then tweeted at the
+          org/posted in their discord.
+        </p>
+
+        <p>
+          I woke up the following morning to the org posting my website on their
+          main{" "}
+          <Link href="https://twitter.com/version1gg/status/1397910742444085259?s=20">
+            Twitter
+          </Link>{" "}
+          account. . They also launched a hashtag along with it. sooner then
+          later twitter profile photos were popping up with cat ears left and
+          right. The website got over 3k hits in the first day. Still one of the
+          coolest things ive ever built.{" "}
+          <Link href="https://www.catearsforv1.com/">
+            It might still be up depending when you see this
+          </Link>
+        </p>
+      </ProjectBox>
+
+      <ProjectBox>
         <ProjectTitle>Form Summary</ProjectTitle>
         <p>
           <Link href="https://www.formsummary.com/"> Form Summary </Link>, this

@@ -13,7 +13,7 @@ const SEO = {
     description,
     images: [
       {
-        url: "https://cartols.com/static/banner.png",
+        url: "https://www.cartols.com/static/banner.png",
         alt: title,
         width: 1280,
         height: 720,
