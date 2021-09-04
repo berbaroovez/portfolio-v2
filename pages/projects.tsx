@@ -1,9 +1,18 @@
 import styled from "styled-components";
 import PageTitles from "./../components/PageTitles";
 import Link from "next/link";
+import { NextSeo } from "next-seo";
 export default function Projects() {
   return (
     <ProjectDiv>
+      <NextSeo
+        title="projects – Carter Olson"
+        canonical="https://cartols/projects"
+        openGraph={{
+          url: "https://cartols/projects",
+          title: "projects – Carter Olson",
+        }}
+      />
       <PageTitles title="Projects" subtitle="yes there is spelling mistakes" />
       <ProjectBox>
         <ProjectTitle>Task Manager</ProjectTitle>
