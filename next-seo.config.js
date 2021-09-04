@@ -1,4 +1,4 @@
-const title = "Carter Olson - Devloper";
+const title = "Carter Olson - Developer";
 const description = "Front-end developer, streamer/youtuber enthusiast";
 
 const SEO = {
