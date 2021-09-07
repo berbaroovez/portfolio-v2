@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import PageTitles from "./../components/PageTitles";
-import Link from "next/link";
+// import a from "next/a";
 import { NextSeo } from "next-seo";
 export default function Projects() {
   return (
@@ -73,26 +73,26 @@ export default function Projects() {
         <p>
           I woke up the following morning to the org posting my website on their
           main{" "}
-          <Link href="https://twitter.com/version1gg/status/1397910742444085259?s=20">
+          <a href="https://twitter.com/version1gg/status/1397910742444085259?s=20">
             Twitter
-          </Link>{" "}
+          </a>{" "}
           account. . They also launched a hashtag along with it. sooner then
           later twitter profile photos were popping up with cat ears left and
           right. The website got over 3k hits in the first day. Still one of the
           coolest things ive ever built.{" "}
-          <Link href="https://www.catearsforv1.com/">
+          <a href="https://www.catearsforv1.com/">
             It might still be up depending when you see this
-          </Link>
+          </a>
         </p>
       </ProjectBox>
 
       <ProjectBox>
         <ProjectTitle>Form Summary</ProjectTitle>
         <p>
-          <Link href="https://www.formsummary.com/"> Form Summary </Link>, this
-          was a simple website made for my mother who does custom sugar cookies.
-          A few times a year she does cookie drops and needed a better way to
-          fulfil orders. Created a simple website that allow her to upload her
+          <a href="https://www.formsummary.com/"> Form Summary </a>, this was a
+          simple website made for my mother who does custom sugar cookies. A few
+          times a year she does cookie drops and needed a better way to fulfil
+          orders. Created a simple website that allow her to upload her
           spreadsheet and see the info in seperate cards. First time storing
           data in local storage allowing for the website to be closed and
           reopened to the same info.
@@ -101,20 +101,20 @@ export default function Projects() {
       <ProjectBox>
         <ProjectTitle>Cacti</ProjectTitle>
         <p>
-          <Link href="https://drinkcacti.vercel.app/"> Cacti </Link>, This was
-          just a remake of the website used to launch the seltzier brand cacti.
-          I was practing styling and this website seemed unique and simple
-          enough to copy.
+          <a href="www.drinkcacti.vercel.app/"> Cacti </a>, This was just a
+          remake of the website used to launch the seltzier brand cacti. I was
+          practing styling and this website seemed unique and simple enough to
+          copy.
         </p>
       </ProjectBox>
       <ProjectBox>
         <ProjectTitle>Cookie Crumbs</ProjectTitle>
         <p>
-          <Link href="cookiecrumbs.vercel.app"> Cookie Crumbs </Link> . Oh boy
-          this project taught me alot and i failed a ton. it was an attempt to
-          create an one stop shop for my moms cookie buisness. ordering forms, a
-          backend to accept/deny orders, an order tracker to see what stage a
-          order was in, and even a payment system to accept payments.
+          <a href="https://cookiecrumbs.vercel.app/"> Cookie Crumbs </a> . Oh
+          boy this project taught me alot and i failed a ton. it was an attempt
+          to create an one stop shop for my moms cookie buisness. ordering
+          forms, a backend to accept/deny orders, an order tracker to see what
+          stage a order was in, and even a payment system to accept payments.
         </p>
         <p>
           This was my first major project that had a real world goal in mind. I
@@ -135,7 +135,7 @@ export default function Projects() {
         <p>
           The PS5 launched and i needed some styling/state practice so i remade
           the home screen ui in react.{" "}
-          <Link href="https://ps-5-ui.vercel.app/">PSFive</Link>
+          <a href="https://ps-5-ui.vercel.app/">PSFive</a>
         </p>
       </ProjectBox>
       <ProjectBox>
@@ -144,11 +144,9 @@ export default function Projects() {
           Twitch streamers have their own emotes but there is two third party
           extensions that add even more custom emotes to chat. For my first ever
           react project i copied one of my favorite sites{" "}
-          <Link href="https://slmn.io/emote">here</Link>. Used it as api
-          practice. simple. perfect first project.{" "}
-          <Link href="https://twitch-emote-finder.vercel.app/">
-            Emote Finder
-          </Link>
+          <a href="https://slmn.io/emote">here</a>. Used it as api practice.
+          simple. perfect first project.{" "}
+          <a href="https://twitch-emote-finder.vercel.app/">Emote Finder</a>
         </p>
       </ProjectBox>
     </ProjectDiv>
