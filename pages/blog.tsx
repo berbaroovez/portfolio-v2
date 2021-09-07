@@ -16,6 +16,7 @@ export default function Goals() {
         title="Blogs"
         subtitle="The Anthony Fantano of coding, call that Blogthony Cotano"
       />
+      <h1>building in public so this page is still under construction 🏗👷‍♂️</h1>
     </BlogDiv>
   );
 }
