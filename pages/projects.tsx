@@ -101,7 +101,7 @@ export default function Projects() {
       <ProjectBox>
         <ProjectTitle>Cacti</ProjectTitle>
         <p>
-          <a href="www.drinkcacti.vercel.app/"> Cacti </a>, This was just a
+          <a href="https://drinkcacti.vercel.app/"> Cacti </a>, This was just a
           remake of the website used to launch the seltzier brand cacti. I was
           practing styling and this website seemed unique and simple enough to
           copy.
