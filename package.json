@@ -8,7 +8,10 @@
   },
   "dependencies": {
     "@types/styled-components": "^5.1.9",
+    "gray-matter": "^4.0.3",
+    "grey-matter": "^0.0.0",
     "next": "latest",
+    "next-mdx-remote": "^3.0.8",
     "next-seo": "^4.26.0",
     "react": "^17.0.2",
     "react-dom": "^16.8.0",

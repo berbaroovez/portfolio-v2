@@ -1,0 +1,18 @@
+---
+slug: mdx-blog
+title: Test Section
+by: carter olson
+---
+
+Yo fren! Im going to show ya'll how to make a mdx based nextjs blog just like this one. I'll guide you through it and talk about my troubles.
+Hope this helps you!! I'll be using hashnodes [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) for this build
+
+<br />
+<br />
+
+I'm hosting my mdx files in my project and not in a database.
+First thing you need to do is create a directory in your project for your mdx files, I called my blogs and put this [test mdx file](https://gist.github.com/thapakazi/da3aede9dd57900c30e0c7a01b3e8329) in there. So
+we have somethign we can render when testing. Feel free to duplicate this file and change the title and slug for better testing. after doing that create a directory in the pages folder and name it blogs.
+Place a file into called [slug].js/tsx deping on if your using typescript or javascript. The "slug" part of the file can be anything you want but you have to make sure you pass in the same word later on in getStaticPaths. I'll explain more down below.
+
+### Get Static Paths
