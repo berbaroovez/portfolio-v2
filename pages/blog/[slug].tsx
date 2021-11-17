@@ -6,7 +6,9 @@ import styled from "styled-components";
 import { serialize } from "next-mdx-remote/serialize";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { FunWords } from "../../components/FunWords";
-
+import CodeBlock from "./../../components/BlogStuff/CodeBlock";
+import { CopyBlock, dracula } from "react-code-blocks";
+import CodeSamples from "../../components/BlogStuff/CodeSamples";
 const Blog = ({ blogData }: any) => {
   const { source } = blogData;
 
@@ -14,7 +16,7 @@ const Blog = ({ blogData }: any) => {
   return (
     <BlogZone>
       <h1>{blogData.title}</h1>
-      <MDXRemote {...source} components={{ FunWords }} />
+      <MDXRemote {...source} components={{ CodeBlock }} />
     </BlogZone>
   );
 };
