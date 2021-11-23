@@ -3,13 +3,13 @@ import {
   MeshWobbleMaterial,
   OrbitControls,
 } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, Vector3 } from "@react-three/fiber";
 import { useRef } from "react";
 import styled from "styled-components";
 import * as THREE from "three";
 // import { softShadows } from "drei";
 interface Props {
-  position: number[];
+  position: Vector3;
   args?: any;
   color?: string;
 }
@@ -28,6 +28,10 @@ const SpinningMesh = ({ position, args, color }: Props) => {
         color={color}
         speed={1}
         factor={0.6}
+        skinning
+        vertexTangents
+        morphNormals
+        morphTargets
       />
     </mesh>
   );
