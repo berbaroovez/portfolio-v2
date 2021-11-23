@@ -1,7 +1,13 @@
 import styled, { keyframes } from "styled-components";
 import { quotes } from "../util/quotes";
+import { useEffect, useState } from "react";
 export default function SideQuote() {
-  const quote = quotes[Math.floor(Math.random() * quotes.length)];
+  const [quote, setQuote] = useState<any>("");
+
+  useEffect(() => {
+    setQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+  }, []);
+
   return (
     <QuoteDiv>
       <q>{quote.quote} </q>
