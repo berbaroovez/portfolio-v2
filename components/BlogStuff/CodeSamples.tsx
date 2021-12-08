@@ -1,11 +1,13 @@
 export default {
-  mdx_blog: `export const getStaticPaths: GetStaticPaths = async () => {
+  mdx_blog: `
+export const getStaticPaths: GetStaticPaths = async () => {
   const directory = path.join(process.cwd(), "blogs");
 
   //filter out all other files that arnt mdx
   let filenames = await fs.readdirSync(directory);
   filenames = filenames.filter((path) => /\.mdx$/.test(path));
 
+  //go through the files and get the greymatter data and return it
   const posts = filenames.map(async (filename) => {
     const source = await fs.readFileSync(path.join(directory, filename));
     const { data } = matter(source);
@@ -14,98 +16,59 @@ export default {
     };
   });
 
+  //We use promise.all to wait for all the promises to resolve before we send the data into getStaticProps
   const blogInfo = await Promise.all(posts);
 
-  const paths = blogInfo.map((post) => ({ params: { ...post.data } }));
-  // console.log(paths);
-
+  //We pass the paths/data into getStaticProps
   return {
     paths: blogInfo.map((post) => ({ params: { ...post.data } })),
     fallback: false,
   };
 };`,
-  jsx: `class HelloMessage extends React.Component {
-  handlePress = () => {
-    alert('Hello')
-  }
-  render() {
-    return (
-      <div>
-        <p>Hello {this.props.name}</p>
-        <button onClick={this.handlePress}>Say Hello</button>
-      </div>
-    );
-  }
-}
+  mdx_blog_getStaticProps: `
 
-ReactDOM.render(
-  <HelloMessage name="Taylor" />, 
-  mountNode 
-);`,
-  julia: `println("Hello, World!")`,
-  kotlin: `fun main(args : Array<String>) {
-  println("Hello, world!")
-}
-`,
-  lisp: `(defun hello-world()
-"Display the string hello world."
-  (interactive)
-  (message "hello world"))
-`,
-  makefile: `all:
-  @echo "Hello world!"
-`,
-  matlab: `disp("Hello World");`,
-  objectivec: `#include <stdio.h>
-#include <objpak.h>
-int
-main (int argc, char **argv)
-{
-  id set =[Set new];
-  argv++;
-  while (--argc)
-  [set add: [String str:*argv++]];
-  [set
-   do
-  :{
-    :each | printf ("hello, %s!\n",[each str]);
-   }
-  ];
-  return 0;
+  export const getStaticProps: GetStaticProps = async (context) => {
+      //content of Context looks as followed
+  //     context {
+  //   params: { slug: 'mdx-blog' },
+  //   locales: undefined,
+  //   locale: undefined,
+  //   defaultLocale: undefined
+  // }
+
+   //Params contains the slug we use that slug to find the correct file to grab the mdx data from
+  const { params } = context;
+
+  let blogData: any = null;
+  if (params) {
+    //we grab the file from our blog folder and then split the grey matter from the mdx data
+    //and then pass both of them as props to our main component
+    const directory = path.join(process.cwd(), \`blogs/\${params.slug}.mdx\`);
+    let filenames = await fs.readFileSync(directory);
+    const { data, content } = matter(filenames);
+    const serializeData = await serialize(content);
+    blogData = { ...data, serializeData };
   }
-`,
-  ocaml: `print_string "Hello World!\n";;`,
-  php: `<?php
-  echo "Hello World!";
-?>
-`,
-  python: `# Hello world in Python 2
-print "Hello World"
 
-# Hello world in Python 3 (aka Python 3000)
-print("Hello World")
-`,
-  r: `cat("Hello world\n")`,
-  ruby: `puts "Hello World!"`,
-  rust: `fn main() {
-  println!("Hello World!");
-}
-`,
-  scala: `object HelloWorld extends App {
-  println("Hello world!")
-}
-`,
-  sql: `SELECT "Hello World";`,
-  swift: `println("Hello, world!")`,
-  tsx: `import * as React from "react";
+    return {
+    props: {
+      blogData,
+    },
+  };
+};
 
-export class HelloWorld extends React.Component<any, any> {
-    render() {
-        return <div>Hello world!It's from Helloword Component.</div>;
-    }
-}`,
-  typescript: `var exclamation: string = "Hello";
-var noun: string = "World";
-console.log(exclamation + noun);
+`,
+
+  mdx_blog_BlogComponent: `
+const Blog = ({ blogData }: any) => {
+  const { serializeData } = blogData;
+
+  return (
+    <BlogZone>
+      <h1>{blogData.title}</h1>
+      <MDXRemote {...serializeData} components={{ CodeBlock }} />
+    </BlogZone>
+  );
+};
 `,
 };
