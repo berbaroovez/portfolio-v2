@@ -17,7 +17,6 @@ interface BlogInfo {
   date: string;
 }
 export default function BlogHomepage(props: BlogHomepageProps) {
-  console.log(props);
   return (
     <BlogDiv>
       <NextSeo

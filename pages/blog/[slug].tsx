@@ -16,7 +16,6 @@ interface BlogProps {
 }
 
 const Blog = (props: BlogProps) => {
-  console.log(props);
   const { source } = props;
 
   // console
@@ -31,7 +30,7 @@ const Blog = (props: BlogProps) => {
         }}
       />
       <BlogZone>
-        <h1>{props.title}</h1>
+        <h1>{props.title.toLowerCase()}</h1>
         <MDXRemote {...source} components={{ CodeBlock }} />
       </BlogZone>
     </>
@@ -100,4 +99,11 @@ export default Blog;
 const BlogZone = styled.div`
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 16px;
+
+  h1 {
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ccc;
+  }
 `;

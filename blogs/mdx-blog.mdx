@@ -1,22 +1,23 @@
 ---
 slug: mdx-blog
 title: mdx Blog with Next and Next-mdx-Remote
-by: carter olson
+by: carter
 date: 12/08/2021
 ---
 
-Yo fren! Im going to show ya'll how to make an mdx based nextjs blog just like
-this one. I'll guide you through it and talk about my troubles. Hope this helps
-you!! I'll be using hashnodes
-[next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) for this build.
+Yo! Im going to show ya'll how to make an mdx based nextjs blog just like this
+one. I'll guide you through it and talk about my troubles. Hope this helps you!!
+I'll be using hashnodes
+[next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) and nextjs for
+this tutorial.
 
 <br />
 
-I'm hosting my mdx files in my project and not in a database. Before we start
-set up a nextjs project any way you want I used my
+I'm hosting my mdx files locally in my project. Before we start set up a nextjs
+project any way you want I used my
 [boilerplate](https://github.com/berbaroovez/sc-next-boilerplate) but you could
 also use yarn create next-app. First thing you need to do is create a directory
-in your project for your mdx files, I called my blogs and put this
+in your project for your mdx files, I called mine blogs and put this
 [test mdx file](https://gist.githubusercontent.com/thapakazi/da3aede9dd57900c30e0c7a01b3e8329/raw/1a3378c27d2c15a5495f8adb6ddc1c2b0a7f4548/sample.md)
 in there. So we have something we can render when testing. Feel free to
 duplicate this file and change the title and slug for better testing. after
@@ -101,10 +102,10 @@ post such as these code blocks.
 
 <br />
 This code block just takes in the code and renders it using a library called react-code-blocks.
-You can check out the code in the [repo here](https://github.com/berbaroovez/portfolio-v2/blob/main/components/BlogStuff/CodeBlock.tsx).
-The nice thing about mdx is that these components can literally be anything you can
-even wrap some of the text in a component to have to display styling. Its really
-easy to use and makes creating blog posts really easy.{" "}
+You can check out the code on my github. This whole site is open source so feel free
+to poke around in the repo. The nice thing about mdx is that these components can
+literally be anything you can even wrap some of the text in a component to have to
+display styling. Its really easy to use and makes creating blog posts really easy.
 
 <br />
 <br />
