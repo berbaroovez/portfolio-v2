@@ -71,4 +71,19 @@ const Blog = ({ blogData }: any) => {
   );
 };
 `,
+
+  mdx_blog_mdx_example: `
+### Get Static Props
+
+My main component is extremely simple. All I do is set the header to the title
+from the props and then pass the blog content into a next-mdx-remote component.
+This component takes the data from the mdx file and renders it to html. You can
+expand this component to add SEO related information to your blog posts or even
+a header image. The options are pretty much endless. That also means you can add
+as much info in your grey matter as you want.
+
+<CodeBlock text={"mdx_blog_BlogComponent"} language="jsx" />
+
+<br />
+`,
 };
