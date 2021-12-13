@@ -26,7 +26,7 @@ const Blog = (props: BlogProps) => {
         canonical={`https://cartols/blog/${props.slug}`}
         openGraph={{
           url: "https://cartols/quotes",
-          title: "quotes – Carter Olson",
+          title: `${props.title} – Carter Olson`,
         }}
       />
       <BlogZone>
