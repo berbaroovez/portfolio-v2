@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyles />
       <Head>
-        <meta name="theme-color" content="#d43e3e" />
+        {/* <meta name="theme-color" content="#000" /> */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <DefaultSeo {...SEO} />
