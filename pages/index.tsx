@@ -17,10 +17,10 @@ export default function Home() {
         <p className="aboutme">
           I love creating web apps that help creators connect with their
           audience better. Allowing them to grow their community is my main
-          goal. More recently I've been exploring Ethereum and Solidity in the
-          goal of getting a job in that field. Web3 technologies really intrigue
-          me because they are one the natural payment layer of the internet and
-          secondly because they allow the user to own their data.
+          goal. Recently I've been exploring a few new areas, such as blender
+          modeling and threejs to render 3d scenes to webpages, Ethereum and
+          Solidity to build decentralized applications, and supabase to help
+          build databases
         </p>
       </IndexDiv>
       <FallingSquares />
