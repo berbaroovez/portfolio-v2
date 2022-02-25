@@ -17,14 +17,14 @@ export default function Header() {
           <Link href="/projects">
             <a>Portfolio</a>
           </Link>
-          <Link href="/goals">
+          {/* <Link href="/goals">
             <a>Goals</a>
-          </Link>
-        </NavBlocks>
-        <NavBlocks>
+          </Link> */}
           <Link href="/blog">
             <a>Blog</a>
           </Link>
+        </NavBlocks>
+        <NavBlocks>
           <Link href="/contact">
             <a>Contact</a>
           </Link>

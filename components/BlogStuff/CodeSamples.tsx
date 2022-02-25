@@ -86,4 +86,76 @@ as much info in your grey matter as you want.
 
 <br />
 `,
+
+  use_auth_AuthProvider: `
+  // Provider component that wraps your app and makes auth object ...
+// ... available to any child component that calls useAuth().
+export const AuthProvider: React.FC = ({ children }) => {
+  const auth = useProvideAuth();
+  return <authContext.Provider value={auth}>{children}</authContext.Provider>;
+};
+
+`,
+  use_auth_useAuth: `export const useAuth = () => {
+  return useContext(authContext);
+};
+`,
+  use_auth_AuthObjectFunction: `
+const useProvideAuth = () => {
+  const [user, setUser] = useState<null | string>(null);
+
+  const sendMagicLink = async (
+    email: string,
+    schoolName: string | null = null
+  ) => {
+    sendSignInLinkToEmail(auth, email, actionCodeSettings)
+      .then(() => {
+      
+      })
+      .catch((error) => {
+ 
+      });
+  };
+
+
+  const handleUser = (user: User | null) => {
+    if (user) {
+      setUser(user.email);
+    } else {
+      setUser(null);
+    }
+  };
+
+  //This is a listener that listens for changes in the user state provided
+  // by firebase so anytime the user changes it will update the state
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      handleUser(user);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  return {
+    sendMagicLink,
+    user,
+  };
+};
+`,
+  use_auth_createContext: `const authContext = createContext<AuthContextData>(authContextDefaultValue)
+`,
+  use_auth_defaultTypes: `
+  export interface AuthContextData {
+  user: string | null;
+  sendMagicLink: (email: string, schoolName: string | null) => Promise<void>;
+  confirmMagicLink: () => Promise<void>;
+  firebaseSignOut: () => void;
+}
+export const authContextDefaultValue: AuthContextData = {
+  user: null,
+  sendMagicLink: () => Promise.reject("not implemented"),
+  confirmMagicLink: () => Promise.reject("not implemented"),
+  firebaseSignOut: () => {},
+};
+`,
 };

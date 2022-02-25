@@ -1,0 +1,97 @@
+---
+slug: use-auth
+title: These are my notes for understanding custom useAuth hooks
+by: carter
+date: 2/22/2022
+published: true
+---
+
+<span>This is more a self note to myself then a blog post</span>
+
+Since taking Lee Robinsons course I've been using some sort of useAuth hook in
+my firebase related projects. Lee's course unfortunately is only in javascript
+so I've had to use that version in my typescript projects until recently when I
+finally went through and typed it
+
+<br />
+<br />
+
+## Basics
+
+I'm wrapping my entire project in a Context Provider that is provided with a few
+values. Right now those values are an auth object containing information about
+the user, a sign in function, a sign up function, and a sign out function. Any
+function/variables could be passed to this
+
+<br />
+<br />
+
+## Context notes
+
+In a normal useContext situation that doesnt use custom hooks the set up looks
+like this.
+
+1. const Context = createContext(`<`default values`>`)
+
+2. Wrapping the app in provider `<`Context.Provider
+   value=`{<values>}>`{children} `<`/Context.Provider`>`
+
+3. then when you wanted to grab a value from with in the app you would use the
+   useContext hook. const value = useContext(Context)
+
+if you dont use the "useContext" hook you must wrap your componant in a consumer
+component such as `<`Context.Consumer`>`{children}`<`/Context.Consumer`>` if you
+use the consumer you can just get the values using {value} but with the
+useContext hook you get your values by value = useContext(`<`variable from
+createContext`>`)
+
+<br />
+<br />
+
+## Custom hooks
+
+### Check List
+
+1. use "createContext" to create the context
+2. create an "AuthProvider" component that passes are values to the context
+   provider. This wraps the entire project
+3. create the custom hook "useAuth" all this does is return
+   "useContext(context)" the context is got from step 1.
+4. create the main function that will return all of values and store the
+   functions we are sharing
+   <br />
+   <br />
+
+## Creating Context
+
+To create context we use the function "createContext".
+
+<CodeBlock text={"use_auth_createContext"} language={"jsx"} />
+In a non typescript project you can get away with not putting in the default value
+in createContext but typescript will yell at you. So that means we need to come up
+with types.{" "}
+
+So our default value will need to be of this types it looks like this
+
+<CodeBlock text={"use_auth_defaultTypes"} language={"jsx"} />
+
+Next Up is the our custom Provider function instead of wrapping the app in
+authContext.Provider we create a custom component this will supply the auth
+object to all children
+
+<CodeBlock text={"use_auth_AuthProvider"} language="jsx" />
+
+After that we have the custom hook that the children object will use instead of
+calling useContext anytime they want access to the auth value
+
+<CodeBlock text={"use_auth_useAuth"} language="jsx" />
+
+And the final part of the the file is the function that creates the auth object
+and controls state This can have any number of functions passed to it and I'm
+cutting out a lot of info for the sake of space but I'll leave one function and
+one variable
+
+<CodeBlock text={"use_auth_AuthObjectFunction"} language="jsx" />
+<br />
+And with that we have a fully typed and working useAuth hook that works for
+firebase and can be easily switched out with something like supabase

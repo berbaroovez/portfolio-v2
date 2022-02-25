@@ -1,0 +1,127 @@
+---
+slug: animations
+title: Notes about CSS Animations
+by: carter
+date: 2/21/2022
+published: false
+---
+
+- everything starts with the transform property on CSS
+- it allows you move a element in either the x, y, or z axis kinda like absolute
+  positioning
+
+  - it does not change the flow position of the element tho so you can still use
+    relative positioning
+
+- BIG NOTES ALERT: when using percents in the transorm statement it refers to
+  the size of the element and not its parent element
+
+- transform doesnt just have one input property. You can do many things like
+  translate, which is like positioning, scale, which well scales the element.
+
+- rotate! well it rotates the element
+- you can use a few different units here deg or turns! like i could just be like
+  transform: rotate(.5turn)
+
+- skews are the finally one. and you should use degs for units :)
+
+- transform origins! -- deciding where the element is going to start when it is
+  transformed its default is the center of the element but you can move it
+  anywhere you want even out side of the element... this doesnt just effect
+  rotate it effects all the transforms i think maybe not translate
+
+1+1=2 you can combine transform properties such as transform: translateX(0px)
+rotate(46deg); but the order does matter if you rotate first youre going to have
+a fun time debugging for a hour
+
+okay example time
+
+image we have two spheres one blue which a planet and one grey that is a moon on
+the moon we apply a transform: rotate(360deg) translateX(80px). what is
+happening is we are first moving the moon 80px to the right and then we are
+rotating it 360deg. then since we translated the origin point is still in the
+center of the blue circle so when we rotate we rotate around the original origin
+point.
+
+## Transition Property
+
+how the transition property works!
+
+transition: property duration timing-function delay transition: transform 6000ms
+ease-in 300ms;
+
+you can also feed in multiple properties just seperate with a comma at the end
+
+wtf is a delay? delay allows you set a time before the animation returns to its
+old state so if you set a delay of 3000ms or 3 seconds the animation will wait 3
+seconds before reverting useful for things like a dropdown menu on a nav bar
+giving you time to hover it
+
+## Key(glock)Frame Animations
+
+keyframes let you create custom timing for your animation. You want to reuse
+keyframes when you can!
+
+@keyframes slide-in { from { transform: translateX(-100%); } to { transform:
+translateX(0%); } }
+
+animation-direction controls the direction of the keyframe loop. default is
+"normal" which goes from 0% to 100% reverse does the opposite of that
+"alternate" reverses the direction every other time so it basically goes 0% to
+100% and then 100% to 0%
+
+## Fill Modes
+
+after an animation is done running it packs it bags and gtfos so that means iif
+you have opacity going from 100% to 0% it will snap back to 100% once the
+animation duration is over.
+
+this can be fixed with animation-fill-mode! using "fowards" will make sure the
+state is kept at the end of the duration usining "backwards" is important when
+you have a delay on your animation. Lets say you have cube set to 0% and you
+want to fade it in and you have a delay of .5s. the cube will be opacity 100%
+for those .5 seconds then start the animation. backwards makes sure the state is
+kept even with a delay :)
+
+"both" combines both of these which is quite peepopog.
+
+## Animation timing
+
+Not all animation need to start automatically when the page loads. We can hook
+up into javascript/react to dynamically start them you can do this in a few ways
+the first by just settinging the "animation:" css property to undefined or the
+actual animation. Another way is doing a similiar thing but with the
+"animation-play-state" property.
+
+Animations vs Transitions (the over is 2 rounds) Keyframes (animations) can do a
+few things transitions can not such as looped, multi-step, and pauseable
+animations.
+
+## Action Driven Animations
+
+So sometimes you want a different animation for when when you hover something
+and when you no longer hover it. To do this you can use two different transform
+properties. So using hover as an example the enter animation should be declared
+in the :hover tag and the exit in the normal tag
+
+When doing this with things like modals opening and closing which do not use
+pseduo tags we have to use one transition property and change its value with a
+ternary statement
+
+## Prefers Reduced Motion
+
+Some people can get disorried with animation due to health issues. To help them
+you can use a media query to disable animations. @media (prefers-reduced-motion:
+no-preference) {.fancy-box { transition: transform 300ms; }}
+
+Note: this is checking if they have "no-preference" which is the default value
+if the user has not turn off animations. by checking the for this and declaring
+animations makes it so the animation never exists if the the user prefers no
+motion.
+
+If we do it the other way we already delcare the animation in the normal tag and
+then turn them off in the media query. Doing it the way above is simpler and
+more efficient.
+
+You can also get this media query in javascript by using const mediaQueryList =
+window.matchMedia( '(prefers-reduced-motion: no-preference)' );

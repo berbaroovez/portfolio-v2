@@ -13,7 +13,7 @@ export default function Home() {
       <IndexDiv>
         <h1>car·ter ol·son</h1>
         <p>KARR-ter OAL-sen</p>
-        <p className="def">A web developer focused on Creators and Web3. </p>
+        <p className="def">A web developer </p>
         <p className="aboutme">
           I love creating web apps that help creators connect with their
           audience better. Allowing them to grow their community is my main

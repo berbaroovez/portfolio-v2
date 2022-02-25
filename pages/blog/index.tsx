@@ -17,6 +17,7 @@ interface BlogInfo {
   date: string;
 }
 export default function BlogHomepage(props: BlogHomepageProps) {
+  console.log("props", props);
   return (
     <BlogDiv>
       <NextSeo
@@ -29,9 +30,10 @@ export default function BlogHomepage(props: BlogHomepageProps) {
       />
       <PageTitles
         title="Blogs"
-        subtitle="The Anthony Fantano of coding, call that Blogthony Cotano"
+        subtitle="The Anthony Fantano of coding, call that Blogthony Codetano"
       />
       {props.posts.map((post) => {
+        console.log("post", post);
         return (
           <div key={post.slug}>
             <Link href={`/blog/${post.slug}`}>
@@ -62,15 +64,19 @@ export async function getStaticProps() {
   const posts = filenames.map(async (filename) => {
     const source = await fs.readFileSync(path.join(directory, filename));
     const { data } = matter(source);
+    console.log("data in blog page", data);
 
     return {
       ...data,
     };
   });
 
+  //filter out all the posts that arent published
+  const postList = await Promise.all(posts);
+  const publishedPosts = postList.filter((post) => post.published === true);
   return {
     props: {
-      posts: await Promise.all(posts),
+      posts: publishedPosts,
     },
   };
 }
