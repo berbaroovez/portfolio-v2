@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "components/Header.js"
-  ],
+, "pages/Card.js"  ],
   "exclude": [
     "node_modules"
   ]
